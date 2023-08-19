@@ -1,0 +1,17 @@
+{% extends "cipt_app/base.html" %}
+{% load static %}
+{% load embed_video_tags %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<br><br>
+<div class="container" style="color:White; background-color:#282828; border-radius:5px;">
+        <div class="jumbotron">
+          <center>
+              <h5>Click on "Report" to generate your report</h5>
+              <a href="{% url 'report' %}" class="btn" style="color: white; background-color: #fd5e14; " type="submit" id="body-link-row">Report</a>
+          </center>
+            <br><br>
+        </div>
+</div>
+<br><br><br><br><br><br>
+{% endblock content%}

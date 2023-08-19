@@ -1,0 +1,46 @@
+{% extends "cipt_app/base.html" %}
+{% load static %}
+{% load embed_video_tags %}
+{% block content %}
+<style>
+    h6{
+    color: White;
+    }
+
+</style>
+<div class="container">
+  <div class="jumbotron">
+      <center>
+          <br><br>
+    {% if tech_int_score == 100 %}
+      <h6>Excellant :D, Your Technical Interview Score was : {{ tech_int_score }}
+          <br>Which is Superb!, You're ready for Campus Interview.
+          <br><br>You can still watch our reference videos shown below</h6>
+    {% elif tech_int_score == 80 %}
+      <h6>Very Good :), Your Technical Interview Score was : {{ tech_int_score }}
+          <br>Which is Very nice!, But You can still improve.
+          <br><br>You may refer our solution videos shown below</h6>
+    {% elif tech_int_score == 60 %}
+      <h6>Good! , Your Technical Interview Score was : {{ tech_int_score }}
+          <br>Which is Good!, can still improve.
+          <br><br>You may refer our solution videos shown below</h6
+    {% elif tech_int_score == 40 %}
+      <h6>Poor :(, Your Technical Interview Score was : {{ tech_int_score }},
+          <br>Which is poor!, You need to work hard on your Technical skills.
+          <br><br>You need to refer our solution videos shown below</h6>
+    {% elif tech_int_score  == 20 %}
+      <h6>very poor:O, Your Technical Interview Score was : {{ tech_int_score }},
+          <br>Which is Very Poor!, You need to work very hard on your Technical Skills.
+          <br><br>You need to refer our solution videos shown below seriously. Never give up!</h6>
+    {% endif %}
+</center>
+    {% for item in videos %}
+       <center>
+       <br><br>
+       {% video item.url '426x240' %}
+       </center>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content%}

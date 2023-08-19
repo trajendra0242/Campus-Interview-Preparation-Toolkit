@@ -1,0 +1,102 @@
+{% extends 'cipt_app/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <div class="container" style="background-image: url({% static 'cipt_app/images/bg.jpg' %}); ">
+            <div class="row g-0">
+                <div class="col-sm-6 col-md-8" id="header-text">
+                  <h1 id="header-h1" style="color: White;"><span style="color: Black;">Campus</span> Interview Preparation <span style="color: Black;">Toolkit</span></h1>
+                  <p id="header-paragraph" style="color: #F5F5F5;" >A trusted destination for Self Assessment</p>
+                  <a href="{% url 'main' %}" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="body-link-row">Discover More</a>
+                </div>
+                <div class="col-6 col-md-4" id="header-image"><img src="images/test.jpg " alt=""></div>
+            </div>
+    </div>
+    <!--      about website-->
+<div class="container" style="color:White; background-color:#282828; border-radius:5px;">
+    <div class="slideanim abtus_cntr col-sm-12 slideInUp" style="clear:both" name="about">
+        <h1 style="margin-top:30px!important">ABOUT CampusInterviewPrepToolkit<sup class="sup1">TM</sup></h1>
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+                <p style="text-align:left"><b>CampusInterviewPrepToolkit is built on the premise that practice &amp; preparation are crucial to get over your anxieties when attending an interview.</b></p>
+            </div>
+            <div class="col-sm-5 col-sm-offset-1">
+                <p style="text-align:left"><b>As the adage goes – practice makes perfect! Video-Based interviews by CampusInterviewPrepToolkit giveS you the platform to prepare, practice and experience firsthand how a real-life job interview feels. Familiarizing yourself with the interview environment beforehand in a relaxed and stress-free environment gives you an edge over your peers.</b></p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+                <p style="text-align:left"><b>Interviews are crucial moments in one’s career. Theoretical knowledge of interview questions isn't enough when you actually face an interview. Too often fear takes over our performance in job interviews.</b></p>
+            </div>
+            <div class="col-sm-5 col-sm-offset-1">
+                <p style="text-align:left"><b>Our Video--Based interviews are conducted by handpicked college experts with an average experience of 9+ years in their interviewing game. So you’re sure to improve your chances of getting hired!</b></p>
+            </div>
+        </div>
+        <right>
+        <div ><img src="https://interviewbuddy.in/images/boy.png"></div>
+        </right>
+    </div>
+  </div>
+
+<center>
+<div style="background:#fff;border:0 red solid;margin-top:0">
+            <div class="container">
+                <div class="col-sm-12 track whyIb_cntr" id="Why">
+                    <h1 style="margin-top:90px!important">Advantages of Video Interviews</h1>
+                    <div class="main_ctnt round_pic1">
+                        <div class="slideleft fadeInLeftBig">
+                            <div class="cols-xs-12 col-md-3 col-sm-6"><img src="https://interviewbuddy.in/images/reduce%20stress.png" class="img-responsive text-center1">
+                                <br><br>
+                                <h6>REDUCE STRESS &amp; ANXIETY</h6>
+                                <div class="block">
+                                    <div class="custclass"><b>Doubts about how to answer tricky interview questions may stress you out &amp; create anxiety. Get over your nerves with video interviews by analyzing your soft-skills.</b></div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="cols-xs-12 col-md-3 col-sm-6"><img src="https://interviewbuddy.in/images/confidence.png" class="img-responsive text-center1">
+                                <br><br>
+                                <h6>BOOST CONFIDENCE</h6>
+                                <div class="block">
+                                    <div class="custclass"><b>Test drive your answers with AI and improve your skills &amp; experience and boost confidence.</b></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="sm-clear"></div>
+                        <div class="slideright fadeInRightBig">
+                            <div class="cols-xs-12 col-md-3 col-sm-6"><img src="https://interviewbuddy.in/images/score.png" class="img-responsive text-center1">
+                                <br><br>
+                                <h6>CONSTRUCTIVE FEEDBACK</h6>
+                                <div class="block">
+                                    <div class="custclass"><b>Get in-depth analysis of your interview style and tips to help you improve areas where you may have weaknesses by AI-Powered feedback.</b></div>
+                                </div>
+                            </div>
+                           <hr>
+                    </div>
+                </div>
+                <div style="background:#fff">
+                    <div class="col-sm-12 track features" id="Features">
+                        <div class="round_pic2">
+                            <div class="slideleft fadeInLeftBig">
+                                <div class="text-center col-md-3 col-sm-6 col-xs-12 text-img1"><img src="https://interviewbuddy.in/images/nosoftware.png">
+                                    <br><br>
+                                    <h6>No Software Downloads</h6>
+                                    <p><b>If you have access to a computer/tablet and an internet connection, you’re ready to use our service. You’ll never need any downloading.</b></p>
+                                </div>
+                                <br><br>
+                                <div class="text-center col-md-3 col-sm-6 col-xs-12 text-img1"><img src="https://interviewbuddy.in/images/n1.png">
+                                    <br><br>
+                                    <h6>Interview Scorecard</h6>
+                                    <p><b>Get a detailed interview scorecard with performance-based metrics and comprehensive feedback on your strengths &amp;weaknesses.</b></p>
+                                </div>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </center>
+{% endblock content %}

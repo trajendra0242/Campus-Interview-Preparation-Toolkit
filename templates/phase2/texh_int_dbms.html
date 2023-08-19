@@ -1,0 +1,15 @@
+{% extends "cipt_app/base.html" %}
+{% load static %}
+{% load embed_video_tags %}
+{% block content %}
+<div class="container">
+        <div>
+          <center>
+              <video width='600' height='650' controls autoplay><source src="{{question.videos.url}}" type="video/mp4"></video>
+              <a href="{% url 'tech_int_dbms' %}" class="btn" style="color: white; background-color: #fd5e14; float: right; top: 300px;" type="submit" id="body-link-row">Next Question</a>
+              <a href="{% url 'record' %}" class="btn" style="color: white; background-color: #fd5e14; float: left; top: 300px;" type="submit" id="body-link-row">Answer</a>
+          </center>
+        </div>
+</div>
+
+{% endblock content%}

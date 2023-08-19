@@ -1,0 +1,68 @@
+{% extends "cipt_app/base.html" %}
+{% load static %}
+{% block content %}
+<style>
+
+#RowID{
+background-color: #ececec;
+background-color: Grey;
+-moz-transition: background-color 1s cubic-bezier(1,1,1,1);
+-moz-transition-delay: 0.5s;
+-ms-transition: background-color 1s cubic-bezier(1,1,1,1);
+-ms-transition-delay: 0.5s;
+-o-transition: background-color 1s cubic-bezier(1,1,1,1);
+-o-transition-delay: 0.5s;
+-webkit-transition: background-color 1s cubic-bezier(1,1,1,1);
+-webkit-transition-delay: 0.5s;
+transition: background-color 1s cubic-bezier(1,1,1,1);
+transition-delay: 0s;
+}
+
+#RowID:hover {
+    background-color: white;
+    opacity:0.8;
+}
+
+</style>
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<br><br>
+  <div class="container" style="color:White; background-color:#282828; border-radius:5px;" >
+    <div class="jumbotron" >
+      <center>
+        <br><br>
+        <h6 style="color : White;">The way we interview for job is changing many interviews are now conducted over video which requires a unique set of skills compared to in person interviews on this virtual interviewing software you’ll learn everything u need to know to excel in your next video based interview we’ll cover topics from how to answer tough questions to presenting ur best self with ur lightning and sound setup as well as how to use story telling to connect with the interviewer as you learn these key techniques you’ll have opportunity to practice them inrealistics interview simulations which replicate video conferencing software such as zoom or teams you can practice answering competency and company specific questions in the simulations and identify ur strengths and weaknesses with ai-powered feedback on your answers and ability to watch yourself back for self evaluation by the end of this assessment u’ll be able to confidently interview to any campus interview over video.</h6>
+        <br><br>
+      </center>
+      </div>
+  </div>
+<br><br><hr>
+<div class="container" style="color:White; background-color:#282828; border-radius:5px;">
+    <div class="jumbotron" >
+      <left>
+        <h3 style="color : 	#F5F5F5;" > How to use? </h3>
+        <h6><b>Step 1 :</b> After clicking on proceed select any one topic from listed </h6>
+        <h6><b>Step 2 :</b> After selecting a topic your interview will start, then listen to the question if not clear play again </h6>
+        <h6><b>Step 3 :</b> Once ready click on "Answer" button </h6>
+        <h6><b>Step 4 :</b> After clicking on the answer button a procturing window will open and after that you can start saying your answer </h6>
+        <h6><b>Step 5 :</b> Once you finished saying the answer click on procturing window ang press "q" </h6>
+        <h6><b>Step 6 :</b> After pressing "q" or saying "stop" you'll see a "Report" button click on it to generate your report </h6>
+        <h6><b>Step 7 :</b> Now the main self assessment starts where you'll be able to see your strengths and weaknesses.</h6>
+        <h6><b>Step 8 :</b> To see your weaknesses click on issues you want to address plus you'll find a solution of that issue below in the form of video </h6>
+      </left>
+      <center style="border-radius:5px;">
+        <br>
+        <h3 style="color : #303030;background-color:#F5F5F5; border-radius :5px; ">Let's begin your journey towards success!!! </h3>
+        <br>
+      </center>
+
+    </div>
+  </div>
+<br>
+<div class="container" >
+    <div class="jumbotron" >
+      <center>
+        <a href="{% url 'tech_int_select' %}"  class="btn" style="color: white; background-color: #fd5e14;" type="submit" id="header-links">Proceed</a>
+      </center>
+      </div>
+  </div>
+{% endblock content %}

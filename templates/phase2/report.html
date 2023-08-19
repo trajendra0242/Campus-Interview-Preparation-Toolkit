@@ -1,0 +1,222 @@
+{% extends "cipt_app/base.html" %}
+{% load static %}
+{% load embed_video_tags %}
+{% block content %}
+
+<style>
+
+.WhiteColor{
+	background-color : white;
+}
+.b-skills
+{
+ border-top: 1px solid white
+<!-- #f9f9f9;-->
+ padding-top: 46px;
+ text-align: center;
+}
+
+.b-skills:last-child { margin-bottom: -30px; }
+
+.b-skills h2 { margin-bottom: 50px; font-weight: 900; text-transform: uppercase;}
+
+.skill-item
+{
+ position: relative;
+ max-width: 250px;
+ width: 100%;
+ margin-bottom: 30px;
+ color: #555;
+}
+
+.chart-container
+{
+ position: relative;
+ width: 100%;
+ height: 0;
+ padding-top: 100%;
+ margin-bottom: 27px;
+}
+
+.skill-item .chart,
+.skill-item .chart canvas
+{
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100% !important;
+ height: 100% !important;
+}
+
+.skill-item .chart:before
+{
+ content: "";
+ width: 0;
+ height: 100%;
+}
+
+.skill-item .chart:before,
+.skill-item .percent
+{
+ display: inline-block;
+ vertical-align: middle;
+}
+
+.skill-item .percent
+{
+ position: relative;
+ line-height: 1;
+ font-size: 40px;
+ font-weight: 900;
+ z-index: 2;
+}
+
+.skill-item  .percent:after
+{
+ content: attr(data-after);
+ font-size: 20px;
+}
+
+			p{
+					font-weight: 900;
+			}
+
+
+	 </style>
+
+<body>
+
+	 <section id="s-team" class="section">
+
+		 <br><br><br>
+
+		 <div class="b-skills">
+			 <div class="container">
+				 <h2>Your Skills Report</h2>
+
+				 <div class="row">
+					 <div class="col-xs-12 col-sm-6 col-md-3">
+						 <div class="skill-item center-block">
+							 <div class="chart-container">
+								 <div class="chart " data-percent="{{ ief }}" data-bar-color="#23afe3">
+									 <span class="percent" data-after="%">{{ ief }}</span>
+								 </div>
+							 </div>
+
+							 <p>Emotion Score</p>
+						 </div>
+					 </div>
+					 <div class="col-xs-12 col-sm-6 col-md-3">
+						 <div class="skill-item center-block">
+							 <div class="chart-container">
+								 <div class="chart " data-percent="{{ ieb }}" data-bar-color="#a7d212">
+									 <span class="percent" data-after="%">{{ ieb }}</span>
+								 </div>
+							 </div>
+
+							 <p>Body Posture Score</p>
+						 </div>
+					 </div>
+
+					 <div class="col-xs-12 col-sm-6 col-md-3">
+						 <div class="skill-item center-block">
+							 <div class="chart-container">
+								 <div class="chart " data-percent="{{ iee }}" data-bar-color="#ff4241">
+									 <span class="percent" data-after="%">{{ iee }}</span>
+								 </div>
+							 </div>
+
+							 <p>Eye Contact Score</p>
+						 </div>
+					 </div>
+
+					 <div class="col-xs-12 col-sm-6 col-md-3">
+						 <div class="skill-item center-block">
+							 <div class="chart-container">
+								 <div class="chart " data-percent="{{ tmu }}" data-bar-color="#edc214">
+									 <span class="percent" data-after="%">{{ tmu }}</span>
+								 </div>
+							 </div>
+							 <p>Technical Interview Score</p>
+						 </div>
+					 </div>
+				 </div>
+			 </div>
+		 </div>
+	 </section>
+
+	<br><br><br>
+			<center>
+			<div class="container">
+			<div class="jumbotron">
+				<a href="{% url 'illegal_face' %}">Emotion Issues</a>
+				<div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: {{ recording.illegal_face }}%" aria-valuenow="{{ recording.illegal_face }}" aria-valuemin="0" aria-valuemax="100"></div></div><br><br>
+				<a href="{% url 'illegal_body' %}">posture Issues</a>
+				<div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: {{ recording.illegal_body }}%" aria-valuenow="{{ recording.illegal_body }}" aria-valuemin="0" aria-valuemax="100"></div></div><br><br>
+				<a href="{% url 'illegal_eye' %}">Eye Contact Issues</a>
+				<div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: {{ recording.illegal_eye }}%" aria-valuenow="{{ recording.illegal_eye }}" aria-valuemin="0" aria-valuemax="100"></div></div><br><br>
+				<a href="{% url 'tech_int_issue' %}">Technical Interview Issues</a>
+				<div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: {{tmp}}%" aria-valuenow="{{tmp}}" aria-valuemin="0" aria-valuemax="100"></div></div><br><br>
+ 			</center>
+			</div>
+			</div>
+<br><br><br><br>
+<br><br><br><br>
+
+<script src="{% static 'report_app/js/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'report_app/js/jquery.appear.min.js' %}"></script>
+<script src="{% static 'report_app/js/jquery.easypiechart.min.js' %}"></script>
+
+<script>
+	 'use strict';
+
+var $window = $(window);
+
+function run()
+{
+ var fName = arguments[0],
+	 aArgs = Array.prototype.slice.call(arguments, 1);
+ try {
+	 fName.apply(window, aArgs);
+ } catch(err) {
+
+ }
+};
+
+/* chart
+================================================== */
+function _chart ()
+{
+ $('.b-skills').appear(function() {
+	 setTimeout(function() {
+		 $('.chart').easyPieChart({
+			 easing: 'easeOutElastic',
+			 delay: 3000,
+			 barColor: '#369670',
+			 trackColor: '#fff',
+			 scaleColor: false,
+			 lineWidth: 21,
+			 trackWidth: 21,
+			 size: 250,
+			 lineCap: 'round',
+			 onStep: function(from, to, percent) {
+				 this.el.children[0].innerHTML = Math.round(percent);
+			 }
+		 });
+	 }, 150);
+ });
+};
+
+
+$(document).ready(function() {
+
+ run(_chart);
+
+
+});
+
+
+
+	 </script>
+</body>
+{% endblock content%}

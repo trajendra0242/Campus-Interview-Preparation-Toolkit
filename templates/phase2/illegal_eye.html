@@ -1,0 +1,43 @@
+{% extends "cipt_app/base.html" %}
+{% load static %}
+{% load embed_video_tags %}
+{% block content %}
+<div class="container" style="color:White; background-color:#282828; border-radius:5px;>
+  <div class="jumbotron">
+      <center>
+    {% if iee == 100 %}
+      <h6>Excellant :D, Your Illegal Eye Position Count was : {{ iee }}
+          <br>Which is Superb!, You're ready for Campus Interview.
+          <br><br>You can still watch our reference videos shown below</h6>
+    {% elif iee == 80 %}
+      <h6>Very Good :), Your Illegal Eye Position Count was : {{ iee }}
+          <br>Which is Very nice!, But You can still improve.
+          <br><br>You may refer our solution videos shown below</h6>
+    {% elif iee == 60 %}
+      <h6>Good! , Your Illegal Eye Position Count was : {{ iee }}
+          <br>Which is Good!, can still improve.
+          <br><br>You may refer our solution videos shown below</h6>
+    {% elif iee == 40 %}
+      <h6>Poor :(, Your Illegal Eye Position Count was : {{ iee }},
+          <br>Which is poor!, You need to work hard on your Eye Contact.
+          <br>Which means your eyes were blinking too much, or you were unable to make a strong eye contact,
+          <br>Blinking Eye too much or Not making an Eye Contact implies that you were nervous,
+          <br><br>You need to refer our solution videos shown below. Never give up!,  You can do better!</h6>
+    {% elif iee  == 20 %}
+      <h6>Very Poor :O, Your Illegal Eye Position Count was : {{ iee }},
+          <br>Which is Very poor!, You need to work harder on your Eye Contact.
+          <br>Which means your eyes were blinking too much, or you were unable to make a strong eye contact,
+          <br>Blinking Eye too much or Not making an Eye Contact implies that you were nervous,
+          <br><br>You need to refer our solution videos shown below seriously. Never give up!,  You can do better!</h6>
+    {% endif %}
+  </center>
+    {% for item in videos %}
+       <center>
+       <br><br>
+       {% video item.url '426x240' %}
+       </center>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content%}
